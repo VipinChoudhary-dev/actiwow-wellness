@@ -1,0 +1,140 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-saffron: var(--saffron);
+  --color-cream: var(--cream);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* Cream / parchment background */
+  --background: oklch(0.978 0.018 85);
+  --foreground: oklch(0.22 0.04 40);
+
+  --card: oklch(0.995 0.008 85);
+  --card-foreground: oklch(0.22 0.04 40);
+  --popover: oklch(0.995 0.008 85);
+  --popover-foreground: oklch(0.22 0.04 40);
+
+  /* Deep ayurvedic green */
+  --primary: oklch(0.32 0.07 145);
+  --primary-foreground: oklch(0.985 0.01 90);
+
+  --secondary: oklch(0.94 0.03 85);
+  --secondary-foreground: oklch(0.28 0.05 145);
+
+  --muted: oklch(0.94 0.025 85);
+  --muted-foreground: oklch(0.45 0.04 60);
+
+  --accent: oklch(0.92 0.06 80);
+  --accent-foreground: oklch(0.28 0.05 145);
+
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.985 0.01 90);
+
+  --border: oklch(0.88 0.03 80);
+  --input: oklch(0.9 0.025 80);
+  --ring: oklch(0.65 0.13 70);
+
+  /* Gold accent */
+  --gold: oklch(0.74 0.14 75);
+  --gold-foreground: oklch(0.22 0.04 40);
+
+  /* Saffron / red accent (for BOGO pill, headings) */
+  --saffron: oklch(0.55 0.2 35);
+  --cream: oklch(0.97 0.025 85);
+
+  /* Gradients & shadows */
+  --gradient-hero: linear-gradient(135deg, oklch(0.97 0.03 85) 0%, oklch(0.93 0.06 80) 60%, oklch(0.86 0.1 75) 100%);
+  --gradient-gold: linear-gradient(135deg, oklch(0.82 0.13 80) 0%, oklch(0.7 0.15 65) 100%);
+  --gradient-primary: linear-gradient(135deg, oklch(0.36 0.08 145) 0%, oklch(0.28 0.06 150) 100%);
+
+  --shadow-elegant: 0 20px 50px -20px color-mix(in oklab, oklch(0.32 0.07 145) 30%, transparent);
+  --shadow-gold: 0 12px 36px -10px color-mix(in oklab, oklch(0.74 0.14 75) 50%, transparent);
+  --shadow-soft: 0 6px 24px -8px color-mix(in oklab, oklch(0.22 0.04 40) 12%, transparent);
+
+  --sidebar: oklch(0.978 0.018 85);
+  --sidebar-foreground: oklch(0.22 0.04 40);
+  --sidebar-primary: oklch(0.32 0.07 145);
+  --sidebar-primary-foreground: oklch(0.985 0.01 90);
+  --sidebar-accent: oklch(0.94 0.03 85);
+  --sidebar-accent-foreground: oklch(0.28 0.05 145);
+  --sidebar-border: oklch(0.88 0.03 80);
+  --sidebar-ring: oklch(0.65 0.13 70);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-hero { background-image: var(--gradient-hero); }
+  .bg-gradient-gold { background-image: var(--gradient-gold); }
+  .bg-gradient-primary { background-image: var(--gradient-primary); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-gold { box-shadow: var(--shadow-gold); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .text-gold { color: var(--gold); }
+  .text-saffron { color: var(--saffron); }
+  .bg-saffron { background-color: var(--saffron); }
+  .font-display { font-family: var(--font-display); }
+}
