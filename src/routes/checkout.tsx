@@ -10,9 +10,9 @@ import heroBogo from "@/assets/hero-bogo.png";
 import { supabase } from "@/lib/supabase";
 import { toast } from "sonner";
 
-const COST = 449;
+const COST = 399;
 const RTO_ADVANCE = 49;
-const MIN_PRICE = 450;
+const MIN_PRICE = 400;
 const MAX_PRICE = 5000;
 
 const searchSchema = z.object({
@@ -55,7 +55,7 @@ const dropshipperSchema = z.object({
 
 function CheckoutPage() {
   const { price: priceParam } = Route.useSearch();
-  const orderTotal = priceParam ?? 449; // what the customer pays on COD
+  const orderTotal = priceParam ?? 699; // what the customer pays on COD
 
   const subtotal = orderTotal * 2;       // BOGO display: 2 × price
   const bogoDiscount = orderTotal;       // discount = one of them is free
@@ -162,7 +162,7 @@ function CheckoutPage() {
               }]);
               if (error) {
                 console.error("Supabase insert error:", error);
-                toast.error("Failed to save order to database.");
+                toast.error(`Database Error: ${error.message || "Failed to save"}`);
                 return;
               }
             } catch (err) {

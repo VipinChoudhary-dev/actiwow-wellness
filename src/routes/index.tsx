@@ -15,9 +15,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Actiwow Nabhi Telam — Buy 1 Get 1 FREE | 100% Pure Ayurvedic Belly Button Oil" },
-      { name: "description", content: "Authentic Ayurvedic Nabhi Telam (belly button oil) — improves digestion, glowing skin, hair growth, calm mind. Buy 1 Get 1 FREE at ₹449. Cash on Delivery, lowest RTO ₹49." },
+      { name: "description", content: "Authentic Ayurvedic Nabhi Telam (belly button oil) — improves digestion, glowing skin, hair growth, calm mind. Buy 1 Get 1 FREE at ₹399. Cash on Delivery, lowest RTO ₹49." },
       { property: "og:title", content: "Actiwow Nabhi Telam — Buy 1 Get 1 FREE" },
-      { property: "og:description", content: "100% Pure & Organic Ayurvedic belly button oil. Double the wellness — Buy 1 Get 1 Free at ₹449." },
+      { property: "og:description", content: "100% Pure & Organic Ayurvedic belly button oil. Double the wellness — Buy 1 Get 1 Free at ₹399." },
     ],
   }),
   component: Index,
@@ -64,8 +64,8 @@ function Hero() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <div className="rounded-2xl bg-card border border-border px-5 py-3 shadow-soft">
               <div className="flex items-baseline gap-2">
-                <span className="text-sm line-through text-muted-foreground">₹898</span>
-                <span className="font-display text-3xl font-bold text-foreground">₹449</span>
+                <span className="text-sm line-through text-muted-foreground">₹798</span>
+                <span className="font-display text-3xl font-bold text-foreground">₹399</span>
               </div>
               <p className="text-xs font-medium text-saffron">for 2 bottles · 60ml total</p>
             </div>
@@ -80,7 +80,7 @@ function Hero() {
               to="/checkout"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground shadow-elegant hover:opacity-95 transition"
             >
-              Order Now — ₹449 <Sparkles className="h-4 w-4" />
+              Order Now — ₹399 <Sparkles className="h-4 w-4" />
             </Link>
             <a
               href="#calculator"
@@ -256,12 +256,12 @@ function PurityBanner() {
 }
 
 function MarginCalculator() {
-  const COST = 449;
+  const COST = 399;
   const RTO = 49;
-  const MIN = COST + 1; // 450
+  const MIN = COST + 1; // 400
   const MAX = 5000;
-  const [price, setPrice] = useState(799);
-  const [priceText, setPriceText] = useState("799");
+  const [price, setPrice] = useState(699);
+  const [priceText, setPriceText] = useState("699");
 
   const profit = useMemo(() => Math.max(0, price - COST), [price]);
   const profitWithRefund = useMemo(() => profit + RTO, [profit]);
@@ -297,7 +297,7 @@ function MarginCalculator() {
             Set Your Own Margin
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            We charge ₹449 per order + just ₹49 RTO — one of the lowest in India. You decide the final selling price and pocket the rest.
+            We charge ₹399 per order + just ₹49 RTO — one of the lowest in India. You decide the final selling price and pocket the rest.
           </p>
         </div>
 
@@ -429,7 +429,7 @@ function Testimonials() {
 }
 
 const FAQS = [
-  { q: "What's included in the Buy 1 Get 1 Free offer?", a: "You get 2 full 30ml bottles of Actiwow Nabhi Telam for just ₹449 — that's twice the wellness at the same price." },
+  { q: "What's included in the Buy 1 Get 1 Free offer?", a: "You get 2 full 30ml bottles of Actiwow Nabhi Telam for just ₹399 — that's twice the wellness at the same price." },
   { q: "How long does delivery take?", a: "Orders are usually delivered within 4–7 business days across India. Cash on Delivery is available everywhere." },
   { q: "What is the RTO charge for resellers?", a: "Just ₹49 per RTO — one of the lowest in the industry. If the parcel is later not returned to the customer within the eligible window, the RTO charge is refunded back to you." },
   { q: "Is the oil safe for daily use?", a: "Yes. It's 100% pure & organic — no chemicals, no artificial fragrance. Made with cold-pressed Ayurvedic oils and herbs, safe for daily external use." },
@@ -477,13 +477,13 @@ function FinalCTA() {
               Begin your nightly <span className="text-gold italic">ritual</span> tonight.
             </h2>
             <p className="mt-4 text-lg opacity-90 max-w-xl mx-auto">
-              Buy 1 Get 1 Free at just ₹449. Cash on Delivery. Pan India shipping.
+              Buy 1 Get 1 Free at just ₹399. Cash on Delivery. Pan India shipping.
             </p>
             <Link
               to="/checkout"
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-gold px-9 py-4 text-base font-bold text-gold-foreground shadow-gold hover:opacity-95 transition"
             >
-              Order Now — ₹449 <Sparkles className="h-4 w-4" />
+              Order Now — ₹399 <Sparkles className="h-4 w-4" />
             </Link>
           </div>
         </div>
